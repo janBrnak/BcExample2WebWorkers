@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<widget id="io.cordova.exampleWebWorkers" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
+    <name>2. Example Web workers</name>
+    <description>2. Example Web workers.</description>
+    <author email="j.brnak@gmail.com" href="">Jan Brnak</author>
+    <content src="index.html" />
+
+    <feature name="App">
+        <param name="android-package" value="org.apache.cordova.App" />
+    </feature>
+    <preference name="useBrowserHistory" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="true" />
+    <access origin="*" />
+</widget>

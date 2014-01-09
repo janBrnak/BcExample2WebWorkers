@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge" />-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>2. Príklad Web workers</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>2. Príklad Web workers</h1>
+            <h2>Geneorovanie najväčšieho spoločneho deliteľa</h2>
+            <div id="errorMessage"></div>
+            <form id="workers" name="gcd-form" id="gcd-form" method="post" onsubmit=" startTimeOutGenerate(); return false;">
+                <fieldset>
+                    <legend>Vstupné hodnoty</legend>
+
+                    <div id="gcd-fomat-box">
+                        <div class="form-element text">
+                            <label for="x-min" class="label-small"><span>*</span>X min: </label>
+                            <input type="number" name="position[x-min]" id="x-min" class="small" value="4" data-element-validation="number" />
+                            <span class="error nodisplay"></span>
+                            <div class="breaker"></div>
+                        </div>
+
+                        <div class="form-element text">
+                            <label for="y-min" class="label-small"><span>*</span>Y min: </label>
+                            <input type="number" name="position[y-min]" id="y-min" class="small" value="3" data-element-validation="number" />
+                            <span class="error nodisplay"></span>
+                            <div class="breaker"></div>
+                        </div>
+                        <div class="breaker"></div>
+
+                        <div class="form-element text">
+                            <label for="x-max" class="label-small"><span>*</span>X max: </label>
+                            <input type="number" name="position[x-max]" id="x-max" class="small" value="8" data-element-validation="number" />
+                            <span class="error nodisplay"></span>
+                            <div class="breaker"></div>
+                        </div>
+
+                        <div class="form-element text">
+                            <label for="y-max" class="label-small"><span>*</span>Y max: </label>
+                            <input type="number" name="position[y-max]" id="y-max" class="small" value="6" data-element-validation="number" />
+                            <span class="error nodisplay"></span>
+                            <div class="breaker"></div>
+                        </div>
+                        <div class="breaker"></div>
+
+                        <div class="form-element text">
+                            <label for="x-step" class="label-small"><span>*</span>X krok: </label>
+                            <input type="number" name="position[x-step]" id="x-step" class="small" value="1" data-element-validation="number" />
+                            <span class="error nodisplay"></span>
+                            <div class="breaker"></div>
+                        </div>
+
+                        <div class="form-element text">
+                            <label for="y-step" class="label-small"><span>*</span>Y krok: </label>
+                            <input type="number" name="position[y-step]" id="y-step" class="small" value="1" data-element-validation="number" />
+                            <span class="error nodisplay"></span>
+                            <div class="breaker"></div>
+                        </div>
+                        <div class="breaker"></div>
+
+                        <br />
+                        <div class="mandatory-fields">Údaje označené hviezdičkou (<span>*</span>) sú povinné</div>
+                        <div class="breaker"></div>
+                        <input type="submit" name="registration[submit]" id="submit" value="Odoslať" data-element-validation="false" />
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Výtupné hodnoty</legend>
+                    <div id="table-result"></div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="loader" class="loader"></div>
+        <br />
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/gcd-load-data.js"></script>
+        <script type="text/javascript" src="js/gcd-worker.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
+<script type="text/javascript" src="http://bc-weinre.herokuapp.com/target/target-script-min.js#bc-web-workers"></script>
