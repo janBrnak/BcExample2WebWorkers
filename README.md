@@ -1,2 +1,2 @@
-1. Príklad Web workers
+2. Príklad Web workers
 ======================
